@@ -7,6 +7,9 @@ import "./styles/App.css";
 class CVApp extends React.Component {
   constructor() {
     super();
+    this.handleAddEducationField = this.handleAddEducationField.bind(this);
+    this.handleRemoveEducationField =
+      this.handleRemoveEducationField.bind(this);
     this.state = { educationFieldNum: 1, experienceFieldNum: 1 };
   }
 
@@ -14,18 +17,35 @@ class CVApp extends React.Component {
     e.preventDefault();
   }
 
+  handleAddEducationField() {
+    this.setState({ educationFieldNum: this.state.educationFieldNum + 1 });
+  }
+
+  handleRemoveEducationField() {
+    this.setState({ educationFieldNum: this.state.educationFieldNum - 1 });
+  }
+
   render() {
     const additionalEducationFields = [];
 
-    for (let i = 1; i < this.state.educationFieldNum; i++) {}
+    for (let i = 1; i < this.state.educationFieldNum; i++) {
+      additionalEducationFields.push(
+        <Education key={i} onRemove={this.handleRemoveEducationField} />
+      );
+    }
 
     return (
       <div className="App">
         <form className="CvForm" onSubmit={this.handleSubmit}>
           <Personal />
-          <Education />
+          <Education heading="Education" />
           {additionalEducationFields}
-          <button className="Btn AddFieldsBtn">{"\u2795"}</button>
+          <button
+            className="Btn AddFieldsBtn"
+            onClick={this.handleAddEducationField}
+          >
+            {"\u2795"}
+          </button>
           <Experience />
           <button className="Btn AddFieldsBtn">{"\u2795"}</button>
           <button className="Btn SaveBtn">Save</button>

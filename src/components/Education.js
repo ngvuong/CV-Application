@@ -1,11 +1,13 @@
 import React from "react";
 
-function Education() {
+function Education(props) {
   return (
     <div className="EducationDetails">
-      <h2 id="education" className="GroupHeading">
-        Education
-      </h2>
+      {props.heading ? (
+        <h2 id="education" className="GroupHeading">
+          {props.heading}
+        </h2>
+      ) : null}
       <input type="text" placeholder="School Name" />
       <input type="text" placeholder="Field of Study" />
       <div className="DateOfStudy">
@@ -18,6 +20,11 @@ function Education() {
           <input type="date" id="study-to" />
         </div>
       </div>
+      {props.onRemove ? (
+        <button className="RemoveFieldBtn" onClick={props.onRemove}>
+          Remove
+        </button>
+      ) : null}
     </div>
   );
 }

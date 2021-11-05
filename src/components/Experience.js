@@ -48,7 +48,7 @@ class Experience extends React.Component {
           <Task number={1} />
           {tasks}
         </div>
-        <button className="Btn AddTaskBtn" onClick={this.handleAddTask}>
+        <button className="AddTaskBtn" onClick={this.handleAddTask}>
           Add Task
         </button>
       </div>

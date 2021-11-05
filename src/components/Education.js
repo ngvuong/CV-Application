@@ -11,11 +11,11 @@ function Education() {
       <div className="DateOfStudy">
         <div>
           <label htmlFor="study-from">From:</label>
-          <input type="date" id="study-from" placeholder="From" />
+          <input type="date" id="study-from" />
         </div>
         <div>
           <label htmlFor="study-to">To:</label>
-          <input type="date" id="study-to" placeholder="From" />
+          <input type="date" id="study-to" />
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import Personal from "./components/Personal";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 import "./styles/App.css";
 
 function CVApp() {
@@ -12,6 +13,7 @@ function CVApp() {
       <form className="CvForm" onSubmit={handleSubmit}>
         <Personal />
         <Education />
+        <Experience />
         <button className="Btn SaveBtn">Save</button>
       </form>
     </div>

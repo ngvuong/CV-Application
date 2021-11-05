@@ -31,6 +31,7 @@ body {
 .Other {
   display: flex;
   width: 100%;
+  gap: 0.5rem;
 }
 
 .Name input,
@@ -62,5 +63,24 @@ body {
 
 #study-from,
 #study-to {
+  width: 100%;
+}
+
+/* Experience Details Component */
+.ExperienceDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.DateOfWork {
+  display: flex;
+}
+
+.DateOfWork div {
+  width: 100%;
+}
+
+#work-from,
+#work-to {
   width: 100%;
 }

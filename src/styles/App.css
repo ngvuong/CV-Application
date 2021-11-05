@@ -17,7 +17,7 @@ body {
   width: max-content;
 }
 
-.SaveBtn {
+.Btn {
   width: 100%;
 }
 
@@ -47,6 +47,11 @@ body {
   resize: none;
 }
 
+.PersonalDetails input,
+.PersonalDetails textarea {
+  margin-bottom: 0.5rem;
+}
+
 /* Education Details Component*/
 .EducationDetails {
   display: flex;
@@ -66,6 +71,10 @@ body {
   width: 100%;
 }
 
+.EducationDetails input {
+  margin-bottom: 0.5rem;
+}
+
 /* Experience Details Component */
 .ExperienceDetails {
   display: flex;
@@ -82,5 +91,14 @@ body {
 
 #work-from,
 #work-to {
+  width: 100%;
+}
+
+.ExperienceDetails input {
+  margin-bottom: 0.5rem;
+}
+
+/* Utility Components */
+.Task {
   width: 100%;
 }

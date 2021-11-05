@@ -8,6 +8,11 @@ body {
   margin: 0;
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+}
+
 .CvForm {
   width: max-content;
 }
@@ -16,16 +21,46 @@ body {
   width: 100%;
 }
 
+/* Personal Details Component */
 .PersonalDetails {
   display: flex;
   flex-direction: column;
-  width: max-content;
 }
 
-#about {
+.Name,
+.Other {
+  display: flex;
+  width: 100%;
+}
+
+.Name input,
+.Other input {
+  flex-grow: 1;
+}
+
+.GroupHeading {
   text-align: center;
 }
 
 #description {
   resize: none;
+}
+
+/* Education Details Component*/
+.EducationDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.DateOfStudy {
+  display: flex;
+}
+
+.DateOfStudy div {
+  width: 100%;
+}
+
+#study-from,
+#study-to {
+  width: 100%;
 }

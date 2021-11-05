@@ -3,7 +3,9 @@ import React from "react";
 function Personal() {
   return (
     <div className="PersonalDetails">
-      <h2 id="about">About</h2>
+      <h2 id="about" className="GroupHeading">
+        About
+      </h2>
       <div className="Name">
         <input type="text" id="first-name" placeholder="First Name" />
         <input type="text" id="last-name" placeholder="Last Name" />

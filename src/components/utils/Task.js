@@ -10,7 +10,7 @@ function Task(props) {
       />
       {props.onDelete ? (
         <button className="Btn DeleteBtn" onClick={props.onDelete}>
-          Remove
+          Remove Task
         </button>
       ) : null}
     </div>

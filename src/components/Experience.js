@@ -29,9 +29,11 @@ class Experience extends React.Component {
     }
     return (
       <div className="ExperienceDetails">
-        <h2 id="experience" className="GroupHeading">
-          Experience
-        </h2>
+        {this.props.heading ? (
+          <h2 id="experience" className="GroupHeading">
+            Experience
+          </h2>
+        ) : null}
         <input type="text" id="company" placeholder="Company" />
         <input type="text" id="job-title" placeholder="Title" />
         <div className="DateOfWork">
@@ -48,9 +50,14 @@ class Experience extends React.Component {
           <Task number={1} />
           {tasks}
         </div>
-        <button className="AddTaskBtn" onClick={this.handleAddTask}>
+        <button className="Btn AddTaskBtn" onClick={this.handleAddTask}>
           Add Task
         </button>
+        {this.props.onRemove ? (
+          <button className="Btn RemoveFieldBtn" onClick={this.props.onRemove}>
+            Remove
+          </button>
+        ) : null}
       </div>
     );
   }

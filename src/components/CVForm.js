@@ -2,9 +2,8 @@ import React from "react";
 import Personal from "./components/Personal";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
-import "./styles/App.css";
 
-class CVApp extends React.Component {
+class CVForm extends React.Component {
   constructor() {
     super();
     this.handleAddEducationField = this.handleAddEducationField.bind(this);
@@ -52,32 +51,29 @@ class CVApp extends React.Component {
         <Experience key={i} onRemove={this.handleRemoveExperienceField} />
       );
     }
-
     return (
-      <div className="App">
-        <form className="CvForm" onSubmit={this.handleSubmit}>
-          <Personal />
-          <Education heading="Education" />
-          {additionalEducationFields}
-          <button
-            className="Btn AddFieldsBtn"
-            onClick={this.handleAddEducationField}
-          >
-            {"\u2795"}
-          </button>
-          <Experience heading="Experience" />
-          {additionalExperienceFields}
-          <button
-            className="Btn AddFieldsBtn"
-            onClick={this.handleAddExperienceField}
-          >
-            {"\u2795"}
-          </button>
-          <button className="Btn SaveBtn">Save</button>
-        </form>
-      </div>
+      <form className="CvForm" onSubmit={this.handleSubmit}>
+        <Personal />
+        <Education heading="Education" />
+        {additionalEducationFields}
+        <button
+          className="Btn AddFieldsBtn"
+          onClick={this.handleAddEducationField}
+        >
+          {"\u2795"}
+        </button>
+        <Experience heading="Experience" />
+        {additionalExperienceFields}
+        <button
+          className="Btn AddFieldsBtn"
+          onClick={this.handleAddExperienceField}
+        >
+          {"\u2795"}
+        </button>
+        <button className="Btn SaveBtn">Save</button>
+      </form>
     );
   }
 }
 
-export default CVApp;
+export default CVForm;

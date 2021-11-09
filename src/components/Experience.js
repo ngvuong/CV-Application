@@ -81,7 +81,11 @@ class Experience extends React.Component {
           Add Task
         </button>
         {this.props.onRemove ? (
-          <button className="RemoveFieldBtn" onClick={this.props.onRemove}>
+          <button
+            type="button"
+            className="RemoveFieldBtn"
+            onClick={this.props.onRemove}
+          >
             {"\u2796"}
           </button>
         ) : null}

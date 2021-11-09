@@ -68,8 +68,7 @@ body {
   width: 100%;
 }
 
-#study-from,
-#study-to {
+.DateOfStudy input {
   width: 100%;
 }
 
@@ -93,8 +92,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-#work-from,
-#work-to {
+.DateOfWork input {
   width: 100%;
 }
 
@@ -104,7 +102,7 @@ body {
 
 .AddTaskBtn {
   width: 25%;
-  margin: auto;
+  margin: auto auto 0.5rem auto;
 }
 
 /* Utility Components */

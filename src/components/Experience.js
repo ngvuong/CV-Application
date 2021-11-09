@@ -34,22 +34,23 @@ class Experience extends React.Component {
             Experience
           </h2>
         ) : null}
-        <input type="text" id="company" placeholder="Company" />
-        <input type="text" id="job-title" placeholder="Title" />
+        <input type="text" placeholder="Company" />
+        <input type="text" placeholder="Title" />
         <div className="DateOfWork">
           <div>
-            <label htmlFor="work-from">From</label>
-            <input type="date" id="work-from" />
+            <label>
+              From
+              <input type="date" />
+            </label>
           </div>
           <div>
-            <label htmlFor="work-to">To</label>
-            <input type="date" id="work-to" />
+            <label>
+              To
+              <input type="date" />
+            </label>
           </div>
         </div>
-        <div className="TaskList">
-          {/* <Task number={1} onDelete={this.handleDeleteTask} /> */}
-          {tasks}
-        </div>
+        <div className="TaskList">{tasks}</div>
         <button
           type="button"
           className="Btn AddTaskBtn"

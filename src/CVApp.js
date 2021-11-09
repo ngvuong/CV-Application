@@ -1,8 +1,9 @@
 import React from "react";
 import CVForm from "./components/CVForm";
 import CVPreview from "./components/CVPreview";
-import "./styles/App.css";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
+import "./styles/App.css";
 
 class CVApp extends React.Component {
   constructor(props) {
@@ -10,20 +11,32 @@ class CVApp extends React.Component {
     this.handleAddEducationField = this.handleAddEducationField.bind(this);
     this.handleRemoveEducationField =
       this.handleRemoveEducationField.bind(this);
+    this.handleAddExperienceField = this.handleAddExperienceField.bind(this);
+    this.handleRemoveExperienceField =
+      this.handleRemoveExperienceField.bind(this);
     this.state = {
       isSubmitted: false,
-      num: 1,
+      eduNum: 1,
+      expNum: 1,
       // firstName: "",
       // lastName: "",
     };
   }
 
   handleAddEducationField() {
-    this.setState({ num: this.state.num + 1 });
+    this.setState({ eduNum: this.state.eduNum + 1 });
   }
 
   handleRemoveEducationField() {
-    this.setState({ num: this.state.num - 1 });
+    this.setState({ eduNum: this.state.eduNum - 1 });
+  }
+
+  handleAddExperienceField() {
+    this.setState({ expNum: this.state.expNum + 1 });
+  }
+
+  handleRemoveExperienceField() {
+    this.setState({ expNum: this.state.expNum - 1 });
   }
 
   handleSubmit = (e) => {
@@ -44,18 +57,34 @@ class CVApp extends React.Component {
   };
 
   render() {
-    const additionalEducationFields = [];
+    const additionalEduFields = [];
 
-    for (let i = 1; i < this.state.num; i++) {
-      additionalEducationFields.push(
+    for (let i = 1; i < this.state.eduNum; i++) {
+      additionalEduFields.push(
         <Education
           key={i}
           index={i}
           data={this.state}
           onRemove={this.handleRemoveEducationField}
+          onChange={this.handleInputChange}
         />
       );
     }
+
+    const additionalExpFields = [];
+
+    for (let i = 1; i < this.state.expNum; i++) {
+      additionalExpFields.push(
+        <Experience
+          key={i}
+          index={i}
+          data={this.state}
+          onRemove={this.handleRemoveExperienceField}
+          onChange={this.handleInputChange}
+        />
+      );
+    }
+
     return (
       <div className="App">
         {!this.state.isSubmitted && (
@@ -64,7 +93,10 @@ class CVApp extends React.Component {
             onChange={this.handleInputChange}
             onAddEdu={this.handleAddEducationField}
             onRemoveEdu={this.handleRemoveEducationField}
-            eduFields={additionalEducationFields}
+            eduFields={additionalEduFields}
+            onAddExp={this.handleAddExperienceField}
+            onRemoveExp={this.handleRemoveExperienceField}
+            expFields={additionalExpFields}
             data={this.state}
           />
         )}

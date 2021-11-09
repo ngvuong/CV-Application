@@ -11,18 +11,29 @@ function Education(props) {
       <input
         type="text"
         name={`schoolName${props.index}`}
-        value={props.data.schoolName0}
+        value={props.data[`schoolName${props.index}`] || ""}
         placeholder="School Name"
+        onChange={props.onChange}
       />
-      <input type="text" placeholder="Field of Study" />
+      <input
+        type="text"
+        name={`study${props.index}`}
+        value={props.data[`study${props.index}`] || ""}
+        placeholder="Field of Study"
+        onChange={props.onChange}
+      />
       <div className="DateOfStudy">
         <div>
-          <label htmlFor="study-from">From</label>
-          <input type="date" id="study-from" />
+          <label>
+            From
+            <input type="date" />
+          </label>
         </div>
         <div>
-          <label htmlFor="study-to">To</label>
-          <input type="date" id="study-to" />
+          <label>
+            To
+            <input type="date" />
+          </label>
         </div>
       </div>
       {props.onRemove ? (

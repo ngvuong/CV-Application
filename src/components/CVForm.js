@@ -1,7 +1,7 @@
 import React from "react";
-import Personal from "./components/Personal";
-import Education from "./components/Education";
-import Experience from "./components/Experience";
+import Personal from "./Personal";
+import Education from "./Education";
+import Experience from "./Experience";
 
 class CVForm extends React.Component {
   constructor() {

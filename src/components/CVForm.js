@@ -53,7 +53,7 @@ class CVForm extends React.Component {
     }
     return (
       <form className="CvForm" onSubmit={this.props.onSubmit}>
-        <Personal />
+        <Personal onChange={this.props.onChange} />
         <Education heading="Education" />
         {additionalEducationFields}
         <button

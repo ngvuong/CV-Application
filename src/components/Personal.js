@@ -1,20 +1,50 @@
 import React from "react";
 
-function Personal() {
+function Personal(props) {
   return (
     <div className="PersonalDetails">
       <h2 id="about" className="GroupHeading">
         About
       </h2>
       <div className="Name">
-        <input type="text" id="first-name" placeholder="First Name" />
-        <input type="text" id="last-name" placeholder="Last Name" />
+        <input
+          type="text"
+          id="first-name"
+          name="firstName"
+          placeholder="First Name"
+          onChange={props.onChange}
+        />
+        <input
+          type="text"
+          id="last-name"
+          name="lastName"
+          placeholder="Last Name"
+          onChange={props.onChange}
+        />
       </div>
       <div className="Other">
-        <input type="tel" id="phone" placeholder="Phone" />
-        <input type="email" id="email" placeholder="Email" />
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          placeholder="Phone"
+          onChange={props.onChange}
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          onChange={props.onChange}
+        />
       </div>
-      <textarea id="description" placeholder="Description" rows={5} />
+      <textarea
+        id="description"
+        name="description"
+        placeholder="Description"
+        onChange={props.onChange}
+        rows={5}
+      />
     </div>
   );
 }

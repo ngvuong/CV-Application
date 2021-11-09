@@ -15,10 +15,6 @@ class CVForm extends React.Component {
     this.state = { educationFieldNum: 1, experienceFieldNum: 1 };
   }
 
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  // }
-
   handleAddEducationField() {
     this.setState({ educationFieldNum: this.state.educationFieldNum + 1 });
   }
@@ -53,7 +49,7 @@ class CVForm extends React.Component {
     }
     return (
       <form className="CvForm" onSubmit={this.props.onSubmit}>
-        <Personal onChange={this.props.onChange} />
+        <Personal onChange={this.props.onChange} data={this.props.data} />
         <Education heading="Education" />
         {additionalEducationFields}
         <button

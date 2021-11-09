@@ -17,8 +17,10 @@ class CVApp extends React.Component {
     const targetName = target.name;
     const value = target.value;
     this.setState({ [targetName]: value });
-    console.log(this.state.firstName);
-    console.log(this.state.lastName);
+  };
+
+  handleEdit = (e) => {
+    this.setState({ isSubmitted: false });
   };
 
   render() {
@@ -28,9 +30,12 @@ class CVApp extends React.Component {
           <CVForm
             onSubmit={this.handleSubmit}
             onChange={this.handleInputChange}
+            data={this.state}
           />
         )}
-        {this.state.isSubmitted && <CVPreview data={this.state} />}
+        {this.state.isSubmitted && (
+          <CVPreview data={this.state} onEdit={this.handleEdit} />
+        )}
       </div>
     );
   }

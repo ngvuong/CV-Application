@@ -102,6 +102,11 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.AddTaskBtn {
+  width: 25%;
+  margin: auto;
+}
+
 /* Utility Components */
 .Task {
   width: 90%;

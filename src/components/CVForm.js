@@ -4,8 +4,8 @@ import Education from "./Education";
 import Experience from "./Experience";
 
 class CVForm extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.handleAddEducationField = this.handleAddEducationField.bind(this);
     this.handleRemoveEducationField =
       this.handleRemoveEducationField.bind(this);
@@ -15,9 +15,9 @@ class CVForm extends React.Component {
     this.state = { educationFieldNum: 1, experienceFieldNum: 1 };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-  }
+  // handleSubmit(e) {
+  //   e.preventDefault();
+  // }
 
   handleAddEducationField() {
     this.setState({ educationFieldNum: this.state.educationFieldNum + 1 });
@@ -57,6 +57,7 @@ class CVForm extends React.Component {
         <Education heading="Education" />
         {additionalEducationFields}
         <button
+          type="button"
           className="Btn AddFieldsBtn"
           onClick={this.handleAddEducationField}
         >
@@ -65,12 +66,15 @@ class CVForm extends React.Component {
         <Experience heading="Experience" />
         {additionalExperienceFields}
         <button
+          type="button"
           className="Btn AddFieldsBtn"
           onClick={this.handleAddExperienceField}
         >
           {"\u2795"}
         </button>
-        <button className="Btn SaveBtn">Save</button>
+        <button type="submit" className="Btn SaveBtn">
+          Save
+        </button>
       </form>
     );
   }

@@ -4,7 +4,7 @@ import CVPreview from "./components/CVPreview";
 import "./styles/App.css";
 
 class CVApp extends React.Component {
-  state = { isSubmitted: false, data: { firstName: "", lastName: "" } };
+  state = { isSubmitted: false, firstName: "", lastName: "" };
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +16,9 @@ class CVApp extends React.Component {
     const target = e.target;
     const targetName = target.name;
     const value = target.value;
-    this.setState({ data: { [targetName]: value } });
+    this.setState({ [targetName]: value });
+    console.log(this.state.firstName);
+    console.log(this.state.lastName);
   };
 
   render() {
@@ -28,7 +30,7 @@ class CVApp extends React.Component {
             onChange={this.handleInputChange}
           />
         )}
-        {this.state.isSubmitted && <CVPreview data={this.state.data} />}
+        {this.state.isSubmitted && <CVPreview data={this.state} />}
       </div>
     );
   }

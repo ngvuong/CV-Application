@@ -8,11 +8,10 @@ function Task(props) {
         className="Task"
         placeholder={`Task ${props.number}`}
       />
-      {props.onDelete ? (
-        <button className="Btn DeleteBtn" onClick={props.onDelete}>
-          Remove Task
-        </button>
-      ) : null}
+
+      <span className="DeleteTaskBtn" onClick={props.onDelete}>
+        {"\u232B"}
+      </span>
     </div>
   );
 }

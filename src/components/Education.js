@@ -22,7 +22,7 @@ function Education(props) {
       </div>
       {props.onRemove ? (
         <button className="RemoveFieldBtn" onClick={props.onRemove}>
-          Remove
+          {"\u2796"}
         </button>
       ) : null}
     </div>

@@ -19,7 +19,7 @@ body {
 
 .Btn {
   width: 100%;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* Personal Details Component */
@@ -90,6 +90,7 @@ body {
 
 .DateOfWork div {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 #work-from,
@@ -103,5 +104,6 @@ body {
 
 /* Utility Components */
 .Task {
-  width: 100%;
+  width: 90%;
+  margin-right: 0.5rem;
 }

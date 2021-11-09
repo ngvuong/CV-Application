@@ -7,7 +7,7 @@ class Experience extends React.Component {
     this.handleAddTask = this.handleAddTask.bind(this);
     this.handleDeleteTask = this.handleDeleteTask.bind(this);
     this.state = {
-      taskNum: 1,
+      taskNum: 0,
     };
   }
 
@@ -22,7 +22,7 @@ class Experience extends React.Component {
   render() {
     const tasks = [];
 
-    for (let i = 1; i < this.state.taskNum; i++) {
+    for (let i = 0; i < this.state.taskNum; i++) {
       tasks.push(
         <Task key={i} number={i + 1} onDelete={this.handleDeleteTask} />
       );
@@ -47,15 +47,19 @@ class Experience extends React.Component {
           </div>
         </div>
         <div className="TaskList">
-          <Task number={1} />
+          {/* <Task number={1} onDelete={this.handleDeleteTask} /> */}
           {tasks}
         </div>
-        <button className="Btn AddTaskBtn" onClick={this.handleAddTask}>
+        <button
+          type="button"
+          className="Btn AddTaskBtn"
+          onClick={this.handleAddTask}
+        >
           Add Task
         </button>
         {this.props.onRemove ? (
-          <button className="Btn RemoveFieldBtn" onClick={this.props.onRemove}>
-            Remove
+          <button className="RemoveFieldBtn" onClick={this.props.onRemove}>
+            {"\u2796"}
           </button>
         ) : null}
       </div>

@@ -52,7 +52,7 @@ class CVForm extends React.Component {
       );
     }
     return (
-      <form className="CvForm" onSubmit={this.handleSubmit}>
+      <form className="CvForm" onSubmit={this.props.onSubmit}>
         <Personal />
         <Education heading="Education" />
         {additionalEducationFields}

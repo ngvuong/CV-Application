@@ -18,8 +18,6 @@ class CVApp extends React.Component {
       isSubmitted: false,
       eduNum: 1,
       expNum: 1,
-      // firstName: "",
-      // lastName: "",
     };
   }
 

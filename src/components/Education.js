@@ -26,13 +26,23 @@ function Education(props) {
         <div>
           <label>
             From
-            <input type="date" />
+            <input
+              type="date"
+              name={`studyFrom${props.index}`}
+              value={props.data[`studyFrom${props.index}`] || ""}
+              onChange={props.onChange}
+            />
           </label>
         </div>
         <div>
           <label>
             To
-            <input type="date" />
+            <input
+              type="date"
+              name={`studyTo${props.index}`}
+              value={props.data[`studyTo${props.index}`] || ""}
+              onChange={props.onChange}
+            />
           </label>
         </div>
       </div>

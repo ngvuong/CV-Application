@@ -30,6 +30,7 @@ function Personal(props) {
           id="phone"
           name="phone"
           placeholder="Phone"
+          value={props.data.phone || ""}
           onChange={props.onChange}
         />
         <input
@@ -37,6 +38,7 @@ function Personal(props) {
           id="email"
           name="email"
           placeholder="Email"
+          value={props.data.email || ""}
           onChange={props.onChange}
         />
       </div>
@@ -44,6 +46,7 @@ function Personal(props) {
         id="description"
         name="description"
         placeholder="Description"
+        value={props.data.description || ""}
         onChange={props.onChange}
         rows={5}
       />

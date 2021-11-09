@@ -12,7 +12,10 @@ class CVForm extends React.Component {
     this.handleAddExperienceField = this.handleAddExperienceField.bind(this);
     this.handleRemoveExperienceField =
       this.handleRemoveExperienceField.bind(this);
-    this.state = { educationFieldNum: 1, experienceFieldNum: 1 };
+    this.state = {
+      educationFieldNum: this.props.data.num,
+      experienceFieldNum: 1,
+    };
   }
 
   handleAddEducationField() {
@@ -32,13 +35,13 @@ class CVForm extends React.Component {
   }
 
   render() {
-    const additionalEducationFields = [];
+    // const additionalEducationFields = [];
 
-    for (let i = 1; i < this.state.educationFieldNum; i++) {
-      additionalEducationFields.push(
-        <Education key={i} onRemove={this.handleRemoveEducationField} />
-      );
-    }
+    // for (let i = 1; i < this.state.educationFieldNum; i++) {
+    //   additionalEducationFields.push(
+    //     <Education key={i} onRemove={this.props.onRemove} />
+    //   );
+    // }
 
     const additionalExperienceFields = [];
 
@@ -50,12 +53,12 @@ class CVForm extends React.Component {
     return (
       <form className="CvForm" onSubmit={this.props.onSubmit}>
         <Personal onChange={this.props.onChange} data={this.props.data} />
-        <Education heading="Education" />
-        {additionalEducationFields}
+        <Education heading="Education" index="0" data={this.props.data} />
+        {this.props.eduFields}
         <button
           type="button"
-          className="Btn AddFieldsBtn"
-          onClick={this.handleAddEducationField}
+          className="Btn AddFieldBtn"
+          onClick={this.props.onAddEdu}
         >
           {"\u2795"}
         </button>
@@ -63,7 +66,7 @@ class CVForm extends React.Component {
         {additionalExperienceFields}
         <button
           type="button"
-          className="Btn AddFieldsBtn"
+          className="Btn AddFieldBtn"
           onClick={this.handleAddExperienceField}
         >
           {"\u2795"}

@@ -12,7 +12,7 @@ function Personal(props) {
           id="first-name"
           name="firstName"
           placeholder="First Name"
-          value={props.data.firstName}
+          value={props.data.firstName || ""}
           onChange={props.onChange}
         />
         <input
@@ -20,7 +20,7 @@ function Personal(props) {
           id="last-name"
           name="lastName"
           placeholder="Last Name"
-          value={props.data.lastName}
+          value={props.data.lastName || ""}
           onChange={props.onChange}
         />
       </div>

@@ -2,6 +2,7 @@ import React from "react";
 
 class CVPreview extends React.Component {
   render() {
+    console.log(this.props.data);
     return (
       <div>
         <h1>{this.props.data.firstName}</h1>

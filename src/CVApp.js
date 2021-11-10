@@ -14,6 +14,7 @@ class CVApp extends React.Component {
     this.handleAddExperienceField = this.handleAddExperienceField.bind(this);
     this.handleRemoveExperienceField =
       this.handleRemoveExperienceField.bind(this);
+
     this.state = {
       isSubmitted: false,
       eduNum: 1,

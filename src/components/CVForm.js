@@ -27,6 +27,8 @@ class CVForm extends React.Component {
           index="0"
           data={this.props.data}
           onChange={this.props.onChange}
+          onAddTask={this.props.onAddTask}
+          tasks={this.props.tasks}
         />
         {this.props.expFields}
         <button

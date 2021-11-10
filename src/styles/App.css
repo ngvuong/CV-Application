@@ -46,6 +46,7 @@ textarea {
   width: clamp(40rem, 50vw, 50rem);
   background-color: white;
   padding: 1rem;
+  border: 1rem double black;
 }
 
 .PageHeader {
@@ -59,8 +60,15 @@ textarea {
   margin-top: 0.83em;
 }
 
-.Summary h3 {
+.Description h3,
+.Education h3,
+.Experience h3 {
   text-decoration: underline;
+}
+
+.Education h4,
+.Experience h4 {
+  margin-bottom: 0;
 }
 
 /* Personal Details Component */
@@ -143,21 +151,4 @@ textarea {
 
 .ExperienceDetails input {
   margin-bottom: 0.5rem;
-}
-
-.AddTaskBtn {
-  width: 25%;
-  margin: auto auto 0.5rem auto;
-}
-
-/* Utility Components */
-.Task {
-  width: 95%;
-  margin-right: 0.5rem;
-  margin-left: 3%;
-}
-
-.TaskContainer {
-  display: flex;
-  justify-content: space-between;
 }

@@ -6,6 +6,11 @@ function CVPreview(props) {
   for (let i = 0; i < props.data.eduNum; i++) {
     eduIndecies.push(i);
   }
+
+  const expIndecies = [];
+  for (let i = 0; i < props.data.expNum; i++) {
+    expIndecies.push(i);
+  }
   return (
     <div className="CvPage">
       <div className="PageHeader">
@@ -22,22 +27,43 @@ function CVPreview(props) {
           {props.data.website}
         </div>
       </div>
-      <div className="Summary">
-        <h3>Summary:</h3>
+      <div className="Description">
+        <h3>Description:</h3>
         <p>{props.data.description}</p>
       </div>
       <div className="Education">
         <h3>Education:</h3>
         {eduIndecies.map((i) => (
-          <p key={i}>
-            {props.data[`schoolName${i}`]} <br />
-            {format(parseISO(props.data[`studyFrom${i}`]), "MMM yyyy")} -{" "}
-            {format(parseISO(props.data[`studyTo${i}`]), "MMM yyyy")} <br />
-            {props.data[`study${i}`]}
-          </p>
+          <div key={i}>
+            <h4>{props.data[`schoolName${i}`]}</h4>
+            {props.data[`study${i}`]} <br />
+            {props.data[`studyFrom${i}`]
+              ? format(parseISO(props.data[`studyFrom${i}`]), "MMMM yyyy")
+              : null}{" "}
+            -{" "}
+            {props.data[`studyTo${i}`]
+              ? format(parseISO(props.data[`studyTo${i}`]), "MMMM yyyy")
+              : null}
+          </div>
         ))}
-
-        {props.data.schoolName}
+      </div>
+      <div className="Experience">
+        <h3>Experience:</h3>
+        {expIndecies.map((i) => (
+          <div key={i}>
+            <h4>{props.data[`company${i}`]}</h4>
+            {props.data[`title${i}`]} <br />
+            {props.data[`workFrom${i}`]
+              ? format(parseISO(props.data[`workFrom${i}`]), "MMMM yyyy")
+              : null}{" "}
+            -{" "}
+            {props.data[`workTo${i}`]
+              ? format(parseISO(props.data[`workTo${i}`]), "MMMM yyyy")
+              : null}{" "}
+            <br />
+            <div className="Duties"></div>
+          </div>
+        ))}
       </div>
       <button onClick={props.onEdit}>Edit</button>
     </div>

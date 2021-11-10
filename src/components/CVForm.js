@@ -5,6 +5,7 @@ import Experience from "./Experience";
 
 class CVForm extends React.Component {
   render() {
+    console.log(this.props.eduFields);
     return (
       <form className="CvForm" onSubmit={this.props.onSubmit}>
         <Personal onChange={this.props.onChange} data={this.props.data} />
@@ -27,8 +28,6 @@ class CVForm extends React.Component {
           index="0"
           data={this.props.data}
           onChange={this.props.onChange}
-          onAddTask={this.props.onAddTask}
-          tasks={this.props.tasks}
         />
         {this.props.expFields}
         <button

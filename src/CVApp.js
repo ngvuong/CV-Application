@@ -19,11 +19,13 @@ class CVApp extends React.Component {
       isSubmitted: false,
       eduNum: 1,
       expNum: 1,
+      schoolName: [null],
     };
   }
 
   handleAddEducationField() {
-    this.setState({ eduNum: this.state.eduNum + 1 });
+    // this.setState({ eduNum: this.state.eduNum + 1 });
+    this.setState({ schoolName: [...this.state.schoolName, null] });
   }
 
   handleRemoveEducationField() {
@@ -48,7 +50,10 @@ class CVApp extends React.Component {
     const target = e.target;
     const targetName = target.name;
     const value = target.value;
-    this.setState({ [targetName]: value });
+    const [name, index] = targetName.split("-");
+    // const items = [...this.state[name]];
+    // items[index] = value;
+    // this.setState({ [targetName]: value });
   };
 
   handleEdit = (e) => {
@@ -83,6 +88,7 @@ class CVApp extends React.Component {
         />
       );
     }
+    console.log(this.state);
 
     return (
       <div className="App">

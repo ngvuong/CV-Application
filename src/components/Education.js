@@ -19,7 +19,7 @@ function Education(props) {
         type="text"
         name={`study${props.index}`}
         value={props.data[`study${props.index}`] || ""}
-        placeholder="Field of Study"
+        placeholder="Field of Study/Degree"
         onChange={props.onChange}
       />
       <div className="DateOfStudy">

@@ -1,5 +1,5 @@
 import React from "react";
-import Task from "./utils/Task";
+import Task from "./Task";
 
 class Experience extends React.Component {
   constructor(props) {

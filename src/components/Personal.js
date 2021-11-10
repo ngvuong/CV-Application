@@ -26,6 +26,22 @@ function Personal(props) {
       </div>
       <div className="Other">
         <input
+          type="text"
+          name="jobTitle"
+          placeholder="Job Title"
+          value={props.data.jobTitle || ""}
+          onChange={props.onChange}
+        />
+        <input
+          type="text"
+          name="website"
+          placeholder="Website"
+          value={props.data.website || ""}
+          onChange={props.onChange}
+        />
+      </div>
+      <div className="Misc">
+        <input
           type="tel"
           id="phone"
           name="phone"

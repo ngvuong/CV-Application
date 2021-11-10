@@ -41,6 +41,22 @@ textarea {
   background-color: rgb(230, 230, 230);
 }
 
+/* CvPreview Component */
+.CvPage {
+  width: clamp(40rem, 50vw, 50rem);
+  background-color: white;
+}
+
+.PageHeader {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.OtherInfo {
+  margin-top: 0.83em;
+}
+
 /* Personal Details Component */
 .PersonalDetails {
   display: flex;
@@ -48,14 +64,16 @@ textarea {
 }
 
 .Name,
-.Other {
+.Other,
+.Misc {
   display: flex;
   width: 100%;
   gap: 0.5rem;
 }
 
 .Name input,
-.Other input {
+.Other input,
+.Misc input {
   flex-grow: 1;
 }
 

@@ -17,8 +17,8 @@ function Education(props) {
       />
       <input
         type="text"
-        name={`study${props.index}`}
-        value={props.data[`study${props.index}`] || ""}
+        name="study"
+        value={props.data.eduFields[props.index].study || ""}
         placeholder="Field of Study/Degree"
         onChange={props.onChange}
       />
@@ -28,8 +28,8 @@ function Education(props) {
             From
             <input
               type="date"
-              name={`studyFrom${props.index}`}
-              value={props.data[`studyFrom${props.index}`] || ""}
+              name="studyFrom"
+              value={props.data.eduFields[props.index].studyFrom || ""}
               onChange={props.onChange}
             />
           </label>
@@ -39,8 +39,8 @@ function Education(props) {
             To
             <input
               type="date"
-              name={`studyTo${props.index}`}
-              value={props.data[`studyTo${props.index}`] || ""}
+              name="studyTo"
+              value={props.data.eduFields[props.index].studyTo || ""}
               onChange={props.onChange}
             />
           </label>
@@ -49,7 +49,7 @@ function Education(props) {
       {props.onRemove ? (
         <button
           type="button"
-          className="RemoveFieldBtn"
+          className="Btn RemoveFieldBtn"
           onClick={props.onRemove}
         >
           {"\u2796"}

@@ -35,7 +35,7 @@ function CVPreview(props) {
         <h3>Education:</h3>
         {eduIndecies.map((i) => (
           <div key={i}>
-            <h4>{props.data[`schoolName${i}`]}</h4>
+            <h4>{props.data.eduFields[i][`schoolName`]}</h4>
             {props.data[`study${i}`]} <br />
             {props.data[`studyFrom${i}`]
               ? format(parseISO(props.data[`studyFrom${i}`]), "MMMM yyyy")

@@ -24,11 +24,15 @@ class CVApp extends React.Component {
   }
 
   handleAddEducationField() {
-    this.setState({ eduNum: this.state.eduNum + 1 });
+    // this.setState({ eduNum: this.state.eduNum + 1 });
+    this.setState({ eduFields: [...this.state.eduFields, { schoolName: "" }] });
   }
 
-  handleRemoveEducationField() {
-    this.setState({ eduNum: this.state.eduNum - 1 });
+  handleRemoveEducationField(index) {
+    // this.setState({ eduNum: this.state.eduNum - 1 });
+    this.setState({
+      eduFields: this.state.eduFields.filter((field, i, self) => i !== index),
+    });
   }
 
   handleAddExperienceField() {
@@ -51,7 +55,8 @@ class CVApp extends React.Component {
     const value = target.value;
     // this.setState({ [targetName]: value });
     const fields = [...this.state[fieldName]];
-    fields[index] = value;
+    fields[index][targetName] = value;
+    this.setState({ fields });
   };
 
   handleEdit = (e) => {

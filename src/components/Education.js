@@ -10,8 +10,8 @@ function Education(props) {
       ) : null}
       <input
         type="text"
-        name={`schoolName-${props.index}`}
-        value={props.data[`schoolName-${props.index}`] || ""}
+        name={`schoolName`}
+        value={props.data.eduFields[props.index].schoolName || ""}
         placeholder="School Name"
         onChange={props.onChange}
       />

@@ -13,7 +13,7 @@ class CVForm extends React.Component {
           heading="Education"
           index="0"
           data={this.props.data}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, 0, "eduFields")}
         />
         {this.props.eduFields}
         <button

@@ -20,6 +20,7 @@ class CVApp extends React.Component {
       eduNum: 1,
       expNum: 1,
       eduFields: [{ schoolName: "", study: "", studyFrom: "", studyTo: "" }],
+      expFields: [{ company: "", title: "", workFrom: "", workTo: "" }],
     };
   }
 
@@ -40,11 +41,17 @@ class CVApp extends React.Component {
   }
 
   handleAddExperienceField() {
-    this.setState({ expNum: this.state.expNum + 1 });
+    // this.setState({ expNum: this.state.expNum + 1 });
+    const fields = [
+      ...this.state.expFields,
+      { company: "", title: "", workFrom: "", workTo: "" },
+    ];
+    this.setState({ expFields: fields });
   }
 
-  handleRemoveExperienceField() {
-    this.setState({ expNum: this.state.expNum - 1 });
+  handleRemoveExperienceField(index) {
+    // this.setState({ expNum: this.state.expNum - 1 });
+    this.setState(this.state.expFields.filter((field, i) => i !== index));
   }
 
   handleSubmit = (e) => {
@@ -57,10 +64,13 @@ class CVApp extends React.Component {
     const target = e.target;
     const targetName = target.name;
     const value = target.value;
-    // this.setState({ [targetName]: value });
-    const fields = [...this.state[fieldName]];
-    fields[index][targetName] = value;
-    this.setState({ [fieldName]: fields });
+    if (fieldName === "personalField") {
+      this.setState({ [targetName]: value });
+    } else {
+      const fields = [...this.state[fieldName]];
+      fields[index][targetName] = value;
+      this.setState({ [fieldName]: fields });
+    }
   };
 
   handleEdit = (e) => {
@@ -82,6 +92,20 @@ class CVApp extends React.Component {
         );
       });
 
+    const additionalExpFields = this.state.expFields
+      .slice(1)
+      .map((field, i) => {
+        return (
+          <Experience
+            key={i + 1}
+            index={i + 1}
+            data={this.state}
+            onRemove={(e) => this.handleRemoveExperienceField(i + 1)}
+            onChange={(e) => this.handleInputChange(e, i + 1, "expFields")}
+          />
+        );
+      });
+
     // const additionalEduFields = [];
 
     // for (let i = 1; i < this.state.eduNum; i++) {
@@ -96,19 +120,19 @@ class CVApp extends React.Component {
     //   );
     // }
 
-    const additionalExpFields = [];
+    // const additionalExpFields = [];
 
-    for (let i = 1; i < this.state.expNum; i++) {
-      additionalExpFields.push(
-        <Experience
-          key={i}
-          index={i}
-          data={this.state}
-          onRemove={this.handleRemoveExperienceField}
-          onChange={this.handleInputChange}
-        />
-      );
-    }
+    // for (let i = 1; i < this.state.expNum; i++) {
+    //   additionalExpFields.push(
+    //     <Experience
+    //       key={i}
+    //       index={i}
+    //       data={this.state}
+    //       onRemove={this.handleRemoveExperienceField}
+    //       onChange={this.handleInputChange}
+    //     />
+    //   );
+    // }
     console.log(this.state);
 
     return (
@@ -121,10 +145,8 @@ class CVApp extends React.Component {
             onSubmit={this.handleSubmit}
             onChange={this.handleInputChange}
             onAddEdu={this.handleAddEducationField}
-            onRemoveEdu={this.handleRemoveEducationField}
             eduFields={additionalEduFields}
             onAddExp={this.handleAddExperienceField}
-            onRemoveExp={this.handleRemoveExperienceField}
             expFields={additionalExpFields}
             data={this.state}
           />

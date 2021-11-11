@@ -7,7 +7,10 @@ class CVForm extends React.Component {
   render() {
     return (
       <form className="CvForm" onSubmit={this.props.onSubmit}>
-        <Personal onChange={this.props.onChange} data={this.props.data} />
+        <Personal
+          onChange={(e) => this.props.onChange(e, 0, "personalField")}
+          data={this.props.data}
+        />
         <Education
           heading="Education"
           index="0"
@@ -26,7 +29,7 @@ class CVForm extends React.Component {
           heading="Experience"
           index="0"
           data={this.props.data}
-          onChange={this.props.onChange}
+          onChange={(e) => this.props.onChange(e, 0, "expFields")}
         />
         {this.props.expFields}
         <button

@@ -17,8 +17,8 @@ class CVApp extends React.Component {
 
     this.state = {
       isSubmitted: false,
-      eduNum: 1,
-      expNum: 1,
+      // eduNum: 1,
+      // expNum: 1,
       eduFields: [{ schoolName: "", study: "", studyFrom: "", studyTo: "" }],
       expFields: [{ company: "", title: "", workFrom: "", workTo: "" }],
     };
@@ -51,7 +51,9 @@ class CVApp extends React.Component {
 
   handleRemoveExperienceField(index) {
     // this.setState({ expNum: this.state.expNum - 1 });
-    this.setState(this.state.expFields.filter((field, i) => i !== index));
+    this.setState({
+      expFields: this.state.expFields.filter((field, i) => i !== index),
+    });
   }
 
   handleSubmit = (e) => {
@@ -85,7 +87,7 @@ class CVApp extends React.Component {
           <Education
             key={i + 1}
             index={i + 1}
-            data={this.state}
+            data={this.state.eduFields}
             onRemove={(e) => this.handleRemoveEducationField(i + 1)}
             onChange={(e) => this.handleInputChange(e, i + 1, "eduFields")}
           />
@@ -99,40 +101,13 @@ class CVApp extends React.Component {
           <Experience
             key={i + 1}
             index={i + 1}
-            data={this.state}
+            data={this.state.expFields}
             onRemove={(e) => this.handleRemoveExperienceField(i + 1)}
             onChange={(e) => this.handleInputChange(e, i + 1, "expFields")}
           />
         );
       });
 
-    // const additionalEduFields = [];
-
-    // for (let i = 1; i < this.state.eduNum; i++) {
-    //   additionalEduFields.push(
-    //     <Education
-    //       key={i}
-    //       index={i}
-    //       data={this.state}
-    //       onRemove={this.handleRemoveEducationField}
-    //       onChange={this.handleInputChange}
-    //     />
-    //   );
-    // }
-
-    // const additionalExpFields = [];
-
-    // for (let i = 1; i < this.state.expNum; i++) {
-    //   additionalExpFields.push(
-    //     <Experience
-    //       key={i}
-    //       index={i}
-    //       data={this.state}
-    //       onRemove={this.handleRemoveExperienceField}
-    //       onChange={this.handleInputChange}
-    //     />
-    //   );
-    // }
     console.log(this.state);
 
     return (

@@ -2,11 +2,6 @@ import React from "react";
 import { format, parseISO } from "date-fns";
 
 function CVPreview(props) {
-  const eduIndecies = [];
-  for (let i = 0; i < props.data.eduNum; i++) {
-    eduIndecies.push(i);
-  }
-
   const expIndecies = [];
   for (let i = 0; i < props.data.expNum; i++) {
     expIndecies.push(i);
@@ -33,16 +28,16 @@ function CVPreview(props) {
       </div>
       <div className="Education">
         <h3>Education:</h3>
-        {eduIndecies.map((i) => (
+        {props.data.eduFields.map((field, i) => (
           <div key={i}>
-            <h4>{props.data.eduFields[i][`schoolName`]}</h4>
-            {props.data[`study${i}`]} <br />
-            {props.data[`studyFrom${i}`]
-              ? format(parseISO(props.data[`studyFrom${i}`]), "MMMM yyyy")
+            <h4>{field.schoolName}</h4>
+            {field.study} <br />
+            {field.studyFrom
+              ? format(parseISO(field.studyFrom), "MMMM yyyy")
               : null}{" "}
             -{" "}
-            {props.data[`studyTo${i}`]
-              ? format(parseISO(props.data[`studyTo${i}`]), "MMMM yyyy")
+            {field.studyTo
+              ? format(parseISO(field.studyTo), "MMMM yyyy")
               : null}
           </div>
         ))}

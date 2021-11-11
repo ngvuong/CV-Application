@@ -11,14 +11,14 @@ function Experience(props) {
       <input
         type="text"
         name="company"
-        value={props.data.expFields[props.index].company || ""}
+        value={props.data[props.index].company || ""}
         placeholder="Company"
         onChange={props.onChange}
       />
       <input
         type="text"
         name="title"
-        value={props.data.expFields[props.index].title || ""}
+        value={props.data[props.index].title || ""}
         placeholder="Title"
         onChange={props.onChange}
       />
@@ -29,7 +29,7 @@ function Experience(props) {
             <input
               type="date"
               name="workFrom"
-              value={props.data.expFields[props.index].workFrom || ""}
+              value={props.data[props.index].workFrom || ""}
               onChange={props.onChange}
             />
           </label>
@@ -40,7 +40,7 @@ function Experience(props) {
             <input
               type="date"
               name="workTo"
-              value={props.data.expFields[props.index].workTo || ""}
+              value={props.data[props.index].workTo || ""}
               onChange={props.onChange}
             />
           </label>
@@ -49,7 +49,7 @@ function Experience(props) {
       {props.onRemove ? (
         <button
           type="button"
-          className="RemoveFieldBtn"
+          className="Btn RemoveFieldBtn"
           onClick={props.onRemove}
         >
           {"\u2796"}

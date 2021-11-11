@@ -14,7 +14,7 @@ class CVForm extends React.Component {
         <Education
           heading="Education"
           index="0"
-          data={this.props.data}
+          data={this.props.data.eduFields}
           onChange={(e) => this.props.onChange(e, 0, "eduFields")}
         />
         {this.props.eduFields}
@@ -28,7 +28,7 @@ class CVForm extends React.Component {
         <Experience
           heading="Experience"
           index="0"
-          data={this.props.data}
+          data={this.props.data.expFields}
           onChange={(e) => this.props.onChange(e, 0, "expFields")}
         />
         {this.props.expFields}

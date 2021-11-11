@@ -11,14 +11,14 @@ function Education(props) {
       <input
         type="text"
         name={`schoolName`}
-        value={props.data.eduFields[props.index].schoolName || ""}
+        value={props.data[props.index].schoolName || ""}
         placeholder="School Name"
         onChange={props.onChange}
       />
       <input
         type="text"
         name="study"
-        value={props.data.eduFields[props.index].study || ""}
+        value={props.data[props.index].study || ""}
         placeholder="Field of Study/Degree"
         onChange={props.onChange}
       />
@@ -29,7 +29,7 @@ function Education(props) {
             <input
               type="date"
               name="studyFrom"
-              value={props.data.eduFields[props.index].studyFrom || ""}
+              value={props.data[props.index].studyFrom || ""}
               onChange={props.onChange}
             />
           </label>
@@ -40,7 +40,7 @@ function Education(props) {
             <input
               type="date"
               name="studyTo"
-              value={props.data.eduFields[props.index].studyTo || ""}
+              value={props.data[props.index].studyTo || ""}
               onChange={props.onChange}
             />
           </label>

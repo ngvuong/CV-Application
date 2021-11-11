@@ -19,13 +19,12 @@ class CVApp extends React.Component {
       isSubmitted: false,
       eduNum: 1,
       expNum: 1,
-      schoolName: [null],
+      eduFields: [{ schoolName: "" }],
     };
   }
 
   handleAddEducationField() {
-    // this.setState({ eduNum: this.state.eduNum + 1 });
-    this.setState({ schoolName: [...this.state.schoolName, null] });
+    this.setState({ eduNum: this.state.eduNum + 1 });
   }
 
   handleRemoveEducationField() {
@@ -46,14 +45,13 @@ class CVApp extends React.Component {
     this.setState({ isSubmitted: true });
   };
 
-  handleInputChange = (e) => {
+  handleInputChange = (e, index, fieldName) => {
     const target = e.target;
     const targetName = target.name;
     const value = target.value;
-    const [name, index] = targetName.split("-");
-    // const items = [...this.state[name]];
-    // items[index] = value;
     // this.setState({ [targetName]: value });
+    const fields = [...this.state[fieldName]];
+    fields[index] = value;
   };
 
   handleEdit = (e) => {
@@ -61,19 +59,33 @@ class CVApp extends React.Component {
   };
 
   render() {
-    const additionalEduFields = [];
+    const additionalEduFields = this.state.eduFields
+      .slice(1)
+      .map((field, i) => {
+        return (
+          <Education
+            key={i + 1}
+            index={i + 1}
+            data={this.state}
+            onRemove={(e) => this.handleRemoveEducationField(i + 1)}
+            onChange={(e) => this.handleInputChange(e, i + 1, "eduFields")}
+          />
+        );
+      });
 
-    for (let i = 1; i < this.state.eduNum; i++) {
-      additionalEduFields.push(
-        <Education
-          key={i}
-          index={i}
-          data={this.state}
-          onRemove={this.handleRemoveEducationField}
-          onChange={this.handleInputChange}
-        />
-      );
-    }
+    // const additionalEduFields = [];
+
+    // for (let i = 1; i < this.state.eduNum; i++) {
+    //   additionalEduFields.push(
+    //     <Education
+    //       key={i}
+    //       index={i}
+    //       data={this.state}
+    //       onRemove={this.handleRemoveEducationField}
+    //       onChange={this.handleInputChange}
+    //     />
+    //   );
+    // }
 
     const additionalExpFields = [];
 

@@ -46,6 +46,13 @@ function Experience(props) {
           </label>
         </div>
       </div>
+      <textarea
+        name="jobDescription"
+        placeholder="Job Description"
+        value={props.data[props.index].jobDescription || ""}
+        onChange={props.onChange}
+        rows={5}
+      />
       {props.onRemove ? (
         <button
           type="button"

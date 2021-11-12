@@ -39,6 +39,7 @@ body {
 input,
 textarea {
   background-color: rgb(230, 230, 230);
+  resize: none;
 }
 
 /* CvPreview Component */
@@ -100,10 +101,6 @@ textarea {
 
 .GroupHeading {
   text-align: center;
-}
-
-#description {
-  resize: none;
 }
 
 .PersonalDetails input,

@@ -50,7 +50,7 @@ function CVPreview(props) {
               -{" "}
               {field.workTo ? format(parseISO(field.workTo), "MMM yyyy") : null}{" "}
               <br />
-              <div className="Duties"></div>
+              <p>{field.jobDescription}</p>
             </div>
           ))}
         </div>

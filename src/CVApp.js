@@ -20,7 +20,15 @@ class CVApp extends React.Component {
       // eduNum: 1,
       // expNum: 1,
       eduFields: [{ schoolName: "", study: "", studyFrom: "", studyTo: "" }],
-      expFields: [{ company: "", title: "", workFrom: "", workTo: "" }],
+      expFields: [
+        {
+          company: "",
+          title: "",
+          workFrom: "",
+          workTo: "",
+          jobDescription: "",
+        },
+      ],
     };
   }
 
@@ -44,7 +52,7 @@ class CVApp extends React.Component {
     // this.setState({ expNum: this.state.expNum + 1 });
     const fields = [
       ...this.state.expFields,
-      { company: "", title: "", workFrom: "", workTo: "" },
+      { company: "", title: "", workFrom: "", workTo: "", jobDescription: "" },
     ];
     this.setState({ expFields: fields });
   }

@@ -108,8 +108,6 @@ class CVApp extends React.Component {
         );
       });
 
-    console.log(this.state);
-
     return (
       <div className="App">
         <header className="Header">

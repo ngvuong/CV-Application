@@ -49,7 +49,8 @@ body {
   border: 1px solid black;
 }
 
-.SaveBtn {
+.SaveBtn,
+.PrintBtn {
   height: 2rem;
   background-color: rgb(130, 220, 255);
 }
@@ -83,8 +84,9 @@ textarea:focus-visible {
 
 /* CvPreview Component */
 .CvPage {
-  width: clamp(40rem, 50vw, 50rem);
-  min-height: 70.5rem;
+  /* width: clamp(40rem, 50vw, 50rem); */
+  width: 49.5rem;
+  height: 70rem;
   background-color: white;
   padding: 1rem;
   border: 1rem double rgb(202, 77, 77);

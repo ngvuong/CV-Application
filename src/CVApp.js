@@ -119,7 +119,7 @@ class CVApp extends React.Component {
     return (
       <div className="App">
         <header className="Header">
-          <h1 className="title">CV Craft</h1>
+          <h1 className="Title">CV CRAFT</h1>
         </header>
         {!this.state.isSubmitted && (
           <CVForm

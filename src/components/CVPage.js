@@ -7,9 +7,9 @@ class CVPage extends React.Component {
       <div className="CvPage" ref={this.props.reference}>
         <div className="PageHeader">
           <div>
-            <h2 className="FullName">
+            <h1 className="FullName">
               {this.props.data.firstName} {this.props.data.lastName}
-            </h2>
+            </h1>
             {this.props.data.jobTitle}
           </div>
           <div className="OtherInfo">
@@ -19,14 +19,14 @@ class CVPage extends React.Component {
           </div>
         </div>
         <div className="Description">
-          <h3>Description:</h3>
+          <h2>Description:</h2>
           <p>{this.props.data.description}</p>
         </div>
         <div className="Education">
-          <h3>Education:</h3>
+          <h2>Education:</h2>
           {this.props.data.eduFields.map((field, i) => (
             <div key={i}>
-              <h4>{field.schoolName}</h4>
+              <h3>{field.schoolName}</h3>
               {field.study} <br />
               {field.studyFrom
                 ? format(parseISO(field.studyFrom), "MMM yyyy")
@@ -39,10 +39,10 @@ class CVPage extends React.Component {
           ))}
         </div>
         <div className="Experience">
-          <h3>Experience:</h3>
+          <h2>Experience:</h2>
           {this.props.data.expFields.map((field, i) => (
             <div key={i}>
-              <h4>{field.company}</h4>
+              <h3>{field.company}</h3>
               {field.title} <br />
               {field.workFrom
                 ? format(parseISO(field.workFrom), "MMM yyyy")

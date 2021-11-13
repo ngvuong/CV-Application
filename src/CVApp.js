@@ -17,8 +17,6 @@ class CVApp extends React.Component {
 
     this.state = {
       isSubmitted: false,
-      // eduNum: 1,
-      // expNum: 1,
       eduFields: [{ schoolName: "", study: "", studyFrom: "", studyTo: "" }],
       expFields: [
         {
@@ -33,7 +31,6 @@ class CVApp extends React.Component {
   }
 
   handleAddEducationField() {
-    // this.setState({ eduNum: this.state.eduNum + 1 });
     const fields = [
       ...this.state.eduFields,
       { schoolName: "", study: "", studyFrom: "", studyTo: "" },
@@ -42,14 +39,12 @@ class CVApp extends React.Component {
   }
 
   handleRemoveEducationField(index) {
-    // this.setState({ eduNum: this.state.eduNum - 1 });
     this.setState({
       eduFields: this.state.eduFields.filter((field, i) => i !== index),
     });
   }
 
   handleAddExperienceField() {
-    // this.setState({ expNum: this.state.expNum + 1 });
     const fields = [
       ...this.state.expFields,
       { company: "", title: "", workFrom: "", workTo: "", jobDescription: "" },
@@ -58,7 +53,6 @@ class CVApp extends React.Component {
   }
 
   handleRemoveExperienceField(index) {
-    // this.setState({ expNum: this.state.expNum - 1 });
     this.setState({
       expFields: this.state.expFields.filter((field, i) => i !== index),
     });

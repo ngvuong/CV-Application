@@ -1,6 +1,6 @@
 # CV Craft
 
-https://ngvuong.github.io/cv-project/
+https://ngvuong.github.io/CV-Application/
 
 A simple cv creator that lets you enter relevant information such as education and work histories, then generates a pdf to print or save.
 

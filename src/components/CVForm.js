@@ -7,8 +7,8 @@ function CVForm(props) {
   return (
     <form className="CvForm" onSubmit={props.onSubmit}>
       <Personal
-        onChange={(e) => props.onChange(e, 0, "personalField")}
-        data={props.data}
+        onChange={(e) => props.onChange(e, 0, "personalFields")}
+        data={props.data.personalFields}
       />
       <Education
         heading="Education"

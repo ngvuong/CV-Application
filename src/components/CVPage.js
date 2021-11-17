@@ -7,19 +7,20 @@ function CVPage(props) {
       <div className="PageHeader">
         <div>
           <h1 className="FullName">
-            {props.data.firstName} {props.data.lastName}
+            {props.data.personalFields.firstName}{" "}
+            {props.data.personalFields.lastName}
           </h1>
-          {props.data.jobTitle}
+          {props.data.personalFields.jobTitle}
         </div>
         <div className="OtherInfo">
-          {props.data.phone} <br />
-          {props.data.email} <br />
-          {props.data.website}
+          {props.data.personalFields.phone} <br />
+          {props.data.personalFields.email} <br />
+          {props.data.personalFields.website}
         </div>
       </div>
       <div className="Description">
         <h2>Description:</h2>
-        <p>{props.data.description}</p>
+        <p>{props.data.personalFields.description}</p>
       </div>
       <div className="Education">
         <h2>Education:</h2>
